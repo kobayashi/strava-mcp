@@ -32,6 +32,15 @@ Use the Strava OAuth flow to get an access token and refresh token, then create 
 
 The server automatically refreshes the access token when it expires.
 
+#### Token file location
+
+By default, the server looks for `tokens.json` in the same directory as the binary.
+You can override the path with the `STRAVA_TOKENS_PATH` environment variable:
+
+ ```bash
+ STRAVA_TOKENS_PATH=/path/to/tokens.json ./strava-mcp
+ ```
+
 ### 3. Build
 
 ```bash
