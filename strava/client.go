@@ -56,7 +56,8 @@ func (c *Client) get(path string, params map[string]string) (*http.Response, err
 }
 
 func (c *Client) GetTodayActivities() ([]Activity, error) {
-	today := time.Now().Truncate(24 * time.Hour)
+	now := time.Now()
+	today := time.Date(now.Year(), now.Month(), now.Day(), 0, 0, 0, 0, now.Location())
 	return c.getActivitiesSince(today)
 }
 
